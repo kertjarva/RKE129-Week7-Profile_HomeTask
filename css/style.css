@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&family=Italiana&family=Protest+Strike&display=swap');
 
+:root {
+    --my-padding: 0.4rem;
+}
 
 * {
     margin: 0;
@@ -7,200 +10,108 @@
     box-sizing: border-box;
 }
 
-.container {
-    font-family: 'Lato', sans-serif;
-    margin: 0 auto;
-    width: 75%;
+.container{
+    color: rgb(255, 255, 255);
+    display: grid;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: bold;
+    height: 100vh;
     text-align: center;
-    
+    text-transform: uppercase; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+
 }
 
-.header h1 {
-    text-transform: uppercase;
+.header {
+    align-items: center;
+    display: grid;
+    background-color: rgb(19, 24, 26);
+    grid-area: header;
+    padding: var(--my-padding);
 }
 
-.image-container {   
-    clip-path: circle(50% at 50% 50%);
-    background-image: url('../img/profile1.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 450px;
-    width: 450px;
-    margin: 2rem auto;  
+.menu {
+    align-items: center;
+    display: grid;
+    background-color: rgb(250, 6, 6);
+    grid-area: menu;
+    padding: var(--my-padding);
 }
 
-.navigation ul li {
-    border: 1px solid black;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 2rem;
-    padding: 1rem;
-    width: 16rem;
-    margin: 3rem 0;
+.hero {
+    align-items: center;
+    display: grid;
+    background-color: rgb(44, 115, 172);
+    grid-area: hero;
+    padding: var(--my-padding);
 }
 
-.navigation ul li:not(:last-child) {
-    margin-right: 6rem;
+.main{
+    align-items: center;
+    display: grid;
+    background-color: rgb(163, 8, 8);
+    grid-area: main;
+    padding: var(--my-padding);
 }
 
-
-.main-container {
-    margin: 0 auto;
-    width: 75%;
+.image{
+    align-items: center;
+    display: grid;
+    background-color: rgb(211, 199, 28);
+    grid-area: image;
+    padding: var(--my-padding);
 }
 
-.main-container div {
-    margin-bottom: 2rem;
+.extra{
+    align-items: center;
+    display: grid;
+    background-color: rgb(79, 197, 24);
+    grid-area: extra;
+    padding: var(--my-padding);
 }
 
-.main-container h1 {
-    margin-bottom: 5rem;
+.banner{
+    align-items: center;
+    display: grid;
+    background-color: rgb(157, 18, 175);
+    grid-area: banner;
+    padding: var(--my-padding);
 }
 
-.main-container p {
-    text-align: justify;
+@media (max-width:1024px){
+    .container{
+    gap: 0;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.7fr 0.8fr 0.3fr 0.25fr;
+    grid-template-areas:
+    "header header header header"
+    "hero hero hero hero"
+    "menu main main main"
+    "menu banner banner banner"
+    "menu extra extra image"
+    }   
 }
 
-.footer {
-    font-size: 2rem;
-    padding: 2rem;
-}
-
-.footer ul {
-    list-style: none;
-    margin-bottom: 3rem;
-}
-
-.footer ul li {
-    display: inline-block;
-    margin: 2rem;
-}
-
-.footer ul a {
-    color: #777;
-    text-decoration: none;
-}
-
-
-@media (min-width: 480px) {
-    /*muuda image-container taustapilti*/
-    /*muuda dokumendi taustavärvi*/
-    /*muuda dokumendi tekstivärvi*/
-    /*ära unusta ka raamjoonesid*/
-
-    .image-container {
-        background-image: url('../img/profile2.jpg');   
-    }
-
+@media (max-width:480px) {
     .container {
-        background-color: blanchedalmond;
-        color: rgb(96, 39, 19);
-        width: 100%;
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.8fr 1.5fr 2fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
     }
-
-    .navigation ul li {
-        display: block;
-        border-color: rgb(96, 39, 19);
-        font-size: 1rem;
-        margin: 0;
-        width: 100%;
-    }
-    .navigation ul li:not(:last-child) {
-        border-bottom: none;
-    }
-    
-
-    .main-container {
-        padding: 0.75rem;
-        width: 100%;
-    }
-
-    .main-container h1 {
-        margin: 1rem auto;
-    }
-    
-}
-
-
-@media (min-width: 768px) {
-
-    /*muuda image-container taustapilti*/
-    /*muuda dokumendi taustavärvi*/
-    /*muuda dokumendi tekstivärvi*/
-    /*ära unusta ka raamjoonesid*/
-    
-    .image-container{
-        background-image: url('../img/profile3.jpg');   
-    }
-
-    .container {
-        background-color: rgb(202, 174, 178);
-        color: rgb(96, 39, 19);
-    }
-
-        .navigation ul li{
-            border-color: rgb(96, 39, 19);
-        }
-}
-
-
-@media (min-width: 1024px){
-        
-    /*muuda image-container taustapilti*/
-    /*muuda dokumendi taustavärvi*/
-    /*muuda dokumendi tekstivärvi*/
-    /*ära unusta ka raamjoonesid*/
-
-    .image-container{
-        background-image: url('../img/profile4.jpg');   
-    }
-
-    .container {
-        background-color: rgb(202, 174, 178);
-        color: rgb(96, 39, 19);
-    }
-
-        .navigation ul li{
-            border-color: rgb(96, 39, 19);
-        }
-}
-
-
-@media (min-width: 1200px){
-
-    /*muuda image-container taustapilti*/
-    /*muuda dokumendi taustavärvi*/
-    /*muuda dokumendi tekstivärvi*/
-    /*ära unusta ka raamjoonesid*/
-
-    .image-container{
-        background-image: url('../img/profile3.jpg');   
-    }
-
-    .container {
-        background-color: rgb(202, 174, 178);
-        color: rgb(96, 39, 19);
-    }
-
-        .navigation ul li{
-            border-color: rgb(96, 39, 19);
-        }
-
-    .header h1 {
-        margin: 3rem auto;
-    }
-    .navigation ul li {
-        display: inline-block;
-        width: 16rem;
-    }
-    
-    .navigation ul li:not(:last-child) {
-        border-bottom: 1px solid black;
-        margin-right: 4rem;
-    }
-
-    .main-container {
-        width: 75%;
-    }
-
 }
